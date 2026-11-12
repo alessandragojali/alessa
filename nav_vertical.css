@@ -1,0 +1,24 @@
+body{
+    margin:0;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: papayawhip;
+    border: 1px solid palevioletred;
+}
+
+li a{
+    display: block;
+    color: coral;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li{
+    text-align center;
+    border-bottom: 1px solid palevioletred;
+}

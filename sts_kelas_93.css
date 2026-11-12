@@ -1,0 +1,216 @@
+@font-face {
+    font-family: "singsong";
+    src: url("Singsong.otf");
+}
+
+@font-face {
+    font-family: "Nexa";
+    src: url("Nexa-Heavy.ttf");
+}
+
+body {
+    margin: 0;
+    background-image: url("background1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #f0f4f8;
+    overflow-x: hidden;
+}
+
+/* Animasi Daun Gugur */
+.leaf-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.leaf {
+    position: absolute;
+    top: -50px;
+    font-size: 26px;
+    animation: fall 8s linear infinite;
+    opacity: 0.85;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+}
+
+.leaf:nth-child(1) { left: 8%; animation-duration: 7s; animation-delay: 0s; }
+.leaf:nth-child(2) { left: 22%; animation-duration: 9s; animation-delay: 2s; }
+.leaf:nth-child(3) { left: 38%; animation-duration: 6.5s; animation-delay: 1s; }
+.leaf:nth-child(4) { left: 52%; animation-duration: 10s; animation-delay: 3s; }
+.leaf:nth-child(5) { left: 68%; animation-duration: 8s; animation-delay: 1.5s; }
+.leaf:nth-child(6) { left: 82%; animation-duration: 7.5s; animation-delay: 2.5s; }
+.leaf:nth-child(7) { left: 94%; animation-duration: 9.5s; animation-delay: 0.5s; }
+
+@keyframes fall {
+    0% {
+        top: -50px;
+        transform: translateX(0) rotate(0deg);
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateX(35px) rotate(180deg);
+    }
+    100% {
+        top: 100vh;
+        transform: translateX(-35px) rotate(360deg);
+        opacity: 0.2;
+    }
+}
+
+/* Banner Header Atas dengan Gradasi Soft */
+h2 {
+    background: linear-gradient(135deg, #ffb6c1, #ff94a6);
+    color: #ffffff;
+    text-align: center;
+    font-family: "singsong", sans-serif;
+    padding: 14px;
+    margin-top: 0;
+    box-shadow: 0 4px 15px rgba(255, 148, 166, 0.3);
+    letter-spacing: 1px;
+}
+
+/* Judul Utama dengan Efek Glow Hover */
+h1 {
+    width: 600px;
+    margin: 30px auto;
+    padding: 14px;
+    background: linear-gradient(135deg, #ffb6c1, #ff94a6);
+    color: #ffffff;
+    text-align: center;
+    font-family: "singsong", sans-serif;
+    box-sizing: border-box;
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 20px rgba(255, 148, 166, 0.35);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+h1:hover {
+    color: #ffffff;
+    background: linear-gradient(135deg, #ff8095, #ff6b84);
+    font-size: 36px;
+    cursor: pointer;
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(255, 107, 132, 0.5);
+}
+
+/* Container Teks Utama dengan Glassmorphism Soft */
+div.content-wrapper {
+    position: relative;
+    z-index: 10;
+    width: 75%;
+    max-width: 850px;
+    margin: 30px auto 60px auto;
+    padding: 40px 50px;
+    background-color: rgba(255, 255, 225, 0.92);
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(5px);
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    font-family: "Nexa", sans-serif;
+}
+
+/* Styling Paragraf (Text Indent & Justify Wajib) */
+.paragraf {
+    text-align: justify;
+    text-indent: 45px;
+    line-height: 1.85;
+    font-size: 15px;
+    color: #5c434b;
+    margin-bottom: 22px;
+}
+
+/* Container Foto Card Estetik */
+.media-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.foto-card {
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+.foto-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Frame Foto dengan Efek Swap Hover */
+div.foto {
+    position: relative;
+    width: 380px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 3px solid #ffb6c1;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+div.foto img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.5s ease;
+    padding: 0;
+}
+
+div.foto img.top {
+    opacity: 1;
+    z-index: 2;
+}
+
+div.foto:hover img.top {
+    opacity: 0;
+}
+
+div.foto img.bottom {
+    opacity: 0;
+    z-index: 1;
+}
+
+div.foto:hover img.bottom {
+    opacity: 1;
+    transform: scale(1.08);
+}
+
+.caption {
+    font-size: 13px;
+    color: #e07a8c;
+    margin-top: 12px;
+    margin-bottom: 2px;
+    font-family: "singsong", sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Responsif Layar Kecil */
+@media (max-width: 768px) {
+    h1 {
+        width: 90%;
+    }
+
+    div.content-wrapper {
+        width: 85%;
+        padding: 25px 20px;
+    }
+
+    div.foto {
+        width: 290px;
+        height: 195px;
+    }
+}

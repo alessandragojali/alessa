@@ -1,0 +1,29 @@
+body{
+    background-image: url("background.jpg");
+}
+
+img.ukuran{
+    height: 300px;
+    width: 350px;
+}
+
+img.lengkungan{
+    height: 300px;
+    width: 350px;
+    border-radius: 0% 20% 0% 20%;
+}
+
+div.kelompok{
+    background-color: bisque;
+    height:300px;
+    width:350px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 5px;
+}
+
+div.kelompok img{
+    height:250px;
+    width: 300px;
+    border: 1px solid red;
+}

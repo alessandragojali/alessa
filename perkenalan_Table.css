@@ -1,0 +1,21 @@
+table, th, td{
+    border:1px solid black;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+    background-color: antiquewhite;
+}
+th, td{
+    padding: 5px;
+}
+tr{
+    background-color:rgb(156,235,186);
+}
+tr:nth-child(Even){
+    background-color: floralwhite;
+}
+tr:hover{
+    background-color: pink;
+    
+}
